@@ -9,8 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TuTruongSoRouteImport } from './routes/tu-truong-so'
+import { Route as BatTuRouteImport } from './routes/bat-tu'
+import { Route as BatCucLinhSoRouteImport } from './routes/bat-cuc-linh-so'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TuTruongSoRoute = TuTruongSoRouteImport.update({
+  id: '/tu-truong-so',
+  path: '/tu-truong-so',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BatTuRoute = BatTuRouteImport.update({
+  id: '/bat-tu',
+  path: '/bat-tu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BatCucLinhSoRoute = BatCucLinhSoRouteImport.update({
+  id: '/bat-cuc-linh-so',
+  path: '/bat-cuc-linh-so',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +37,61 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/bat-cuc-linh-so': typeof BatCucLinhSoRoute
+  '/bat-tu': typeof BatTuRoute
+  '/tu-truong-so': typeof TuTruongSoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/bat-cuc-linh-so': typeof BatCucLinhSoRoute
+  '/bat-tu': typeof BatTuRoute
+  '/tu-truong-so': typeof TuTruongSoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/bat-cuc-linh-so': typeof BatCucLinhSoRoute
+  '/bat-tu': typeof BatTuRoute
+  '/tu-truong-so': typeof TuTruongSoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/bat-cuc-linh-so' | '/bat-tu' | '/tu-truong-so'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/bat-cuc-linh-so' | '/bat-tu' | '/tu-truong-so'
+  id: '__root__' | '/' | '/bat-cuc-linh-so' | '/bat-tu' | '/tu-truong-so'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BatCucLinhSoRoute: typeof BatCucLinhSoRoute
+  BatTuRoute: typeof BatTuRoute
+  TuTruongSoRoute: typeof TuTruongSoRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/tu-truong-so': {
+      id: '/tu-truong-so'
+      path: '/tu-truong-so'
+      fullPath: '/tu-truong-so'
+      preLoaderRoute: typeof TuTruongSoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bat-tu': {
+      id: '/bat-tu'
+      path: '/bat-tu'
+      fullPath: '/bat-tu'
+      preLoaderRoute: typeof BatTuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bat-cuc-linh-so': {
+      id: '/bat-cuc-linh-so'
+      path: '/bat-cuc-linh-so'
+      fullPath: '/bat-cuc-linh-so'
+      preLoaderRoute: typeof BatCucLinhSoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +104,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BatCucLinhSoRoute: BatCucLinhSoRoute,
+  BatTuRoute: BatTuRoute,
+  TuTruongSoRoute: TuTruongSoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
