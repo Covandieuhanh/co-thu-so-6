@@ -104,73 +104,66 @@ export function DisciplinePage({
       </section>
 
 
-      {/* Key concepts */}
-      <section className="px-5 sm:px-8 py-20 sm:py-24 border-t border-border/60 bg-[radial-gradient(ellipse_at_center,hsl(42_65%_58%/0.04),transparent_70%)]">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
-            <div>
-              <div className="text-[10px] font-mono text-gold tracking-[0.35em] mb-3">
-                四 · Tứ trụ tri thức
-              </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-display italic">
-                Khái niệm cốt lõi
-              </h2>
+      {/* Key concepts + Practice (two-column on lg) */}
+      <section className="px-5 sm:px-8 py-14 sm:py-20 border-t border-border/60 bg-[radial-gradient(ellipse_at_center,hsl(42_65%_58%/0.04),transparent_70%)]">
+        <div className="max-w-[88rem] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14">
+          <div className="min-w-0">
+            <div className="text-[10px] font-mono text-gold tracking-[0.35em] mb-3">
+              四 · Tứ trụ tri thức
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display italic mb-8">
+              Khái niệm cốt lõi
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {keyConcepts.map((k) => (
+                <div
+                  key={k.term}
+                  className="panel-luxury rounded-lg p-5 sm:p-6 group hover:shadow-gold-glow transition-all"
+                >
+                  <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-gold mb-2 group-hover:tracking-[0.35em] transition-all">
+                    {k.term}
+                  </div>
+                  <p className="text-sm text-foreground/85 leading-relaxed">{k.meaning}</p>
+                </div>
+              ))}
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-            {keyConcepts.map((k) => (
-              <div
-                key={k.term}
-                className="panel-luxury rounded-lg p-6 sm:p-8 group hover:shadow-gold-glow transition-all"
-              >
-                <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-gold mb-3 group-hover:tracking-[0.35em] transition-all">
-                  {k.term}
-                </div>
-                <p className="text-sm sm:text-base text-foreground/85 leading-relaxed">
-                  {k.meaning}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Practice */}
-      <section className="px-5 sm:px-8 py-20 sm:py-24 border-t border-border/60">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-[10px] font-mono text-gold tracking-[0.35em] mb-3">
-            實 · Ứng dụng
+          <div className="min-w-0">
+            <div className="text-[10px] font-mono text-gold tracking-[0.35em] mb-3">
+              實 · Ứng dụng
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display italic mb-8">
+              Thực hành từng bước
+            </h2>
+            <ol className="space-y-4">
+              {practice.map((p, i) => (
+                <li
+                  key={i}
+                  className="grid grid-cols-[auto_1fr] gap-4 sm:gap-6 items-start pb-4 border-b border-border/40 last:border-0"
+                >
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-gold/40 text-gold font-mono text-xs">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="min-w-0 text-sm text-foreground/85 leading-relaxed pt-1.5">
+                    {p}
+                  </span>
+                </li>
+              ))}
+            </ol>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display italic mb-10">
-            Thực hành từng bước
-          </h2>
-          <ol className="space-y-6">
-            {practice.map((p, i) => (
-              <li
-                key={i}
-                className="grid grid-cols-[auto_1fr] gap-5 sm:gap-8 items-start pb-6 border-b border-border/40 last:border-0"
-              >
-                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-gold/40 text-gold font-mono text-xs">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span className="min-w-0 text-sm sm:text-base text-foreground/85 leading-relaxed pt-1.5">
-                  {p}
-                </span>
-              </li>
-            ))}
-          </ol>
         </div>
       </section>
 
       {/* Quote */}
       {quote && (
-        <section className="px-5 sm:px-8 py-24 sm:py-32 border-t border-border/60 bg-[radial-gradient(ellipse_at_center,hsl(42_65%_58%/0.06),transparent_70%)]">
+        <section className="px-5 sm:px-8 py-16 sm:py-24 border-t border-border/60 bg-[radial-gradient(ellipse_at_center,hsl(42_65%_58%/0.06),transparent_70%)]">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="text-gold text-2xl mb-6">❝</div>
-            <p className="text-2xl sm:text-3xl md:text-4xl font-display italic leading-relaxed text-balance text-gold-gradient">
+            <div className="text-gold text-2xl mb-4">❝</div>
+            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display italic leading-relaxed text-balance text-gold-gradient">
               {quote}
             </p>
-            <div className="mt-8 flex items-center justify-center gap-4 opacity-70">
+            <div className="mt-6 flex items-center justify-center gap-4 opacity-70">
               <span className="hairline-gold w-16" />
               <span className="text-gold">✦</span>
               <span className="hairline-gold w-16" />
@@ -180,9 +173,9 @@ export function DisciplinePage({
       )}
 
       {/* Related */}
-      <section className="px-5 sm:px-8 py-20 sm:py-24 border-t border-border/60">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-[10px] font-mono uppercase tracking-[0.35em] text-gold mb-8">
+      <section className="px-5 sm:px-8 py-14 sm:py-20 border-t border-border/60">
+        <div className="max-w-[88rem] mx-auto">
+          <div className="text-[10px] font-mono uppercase tracking-[0.35em] text-gold mb-6">
             Bộ môn liên quan
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
@@ -190,12 +183,12 @@ export function DisciplinePage({
               <Link
                 key={r.to}
                 to={r.to}
-                className="group panel-luxury rounded-lg p-8 block hover:-translate-y-1 hover:shadow-luxury transition-all duration-500"
+                className="group panel-luxury rounded-lg p-6 sm:p-8 block hover:-translate-y-1 hover:shadow-luxury transition-all duration-500"
               >
-                <div className="text-xs font-mono text-gold mb-4 tracking-[0.3em]">
+                <div className="text-xs font-mono text-gold mb-3 tracking-[0.3em]">
                   {r.no} · {r.tag}
                 </div>
-                <div className="text-2xl sm:text-3xl font-display italic mb-8">{r.title}</div>
+                <div className="text-xl sm:text-2xl lg:text-[1.7rem] font-display italic mb-6">{r.title}</div>
                 <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.3em] text-gold">
                   Khám phá
                   <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -205,6 +198,7 @@ export function DisciplinePage({
           </div>
         </div>
       </section>
+
 
       {/* Footer */}
       <footer className="py-14 sm:py-16 px-5 sm:px-8 border-t border-border/60">
