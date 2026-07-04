@@ -250,8 +250,8 @@ function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 sm:py-20 px-5 sm:px-8 border-t border-border/60 bg-gradient-to-b from-transparent to-background">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+      <footer className="py-12 sm:py-16 px-5 sm:px-8 border-t border-border/60 bg-gradient-to-b from-transparent to-background">
+        <div className="max-w-[88rem] mx-auto flex flex-col md:flex-row justify-between items-start gap-10">
           <div className="space-y-4 max-w-sm">
             <div className="flex items-center gap-3">
               <span className="grid h-10 w-10 place-items-center rounded-full border border-gold text-gold font-display italic text-lg">
