@@ -182,17 +182,17 @@ function Index() {
               </span>
 
               <div className="relative">
-                <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center justify-between mb-6">
                   <span className="text-xs font-mono text-gold tracking-[0.3em]">{d.no}</span>
                   <span className="grid h-10 w-10 place-items-center rounded-full border border-gold/30 text-gold font-display text-lg group-hover:border-gold group-hover:shadow-gold-glow transition-all">
                     {d.glyph}
                   </span>
                 </div>
-                <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-muted-foreground mb-3">
+                <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-muted-foreground mb-2">
                   {d.tag}
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-display italic mb-5">{d.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-10">{d.desc}</p>
+                <h3 className="text-xl sm:text-2xl lg:text-[1.6rem] font-display italic mb-4">{d.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-6">{d.desc}</p>
                 <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.3em] text-gold">
                   Khám phá
                   <span className="transition-transform group-hover:translate-x-1">→</span>
