@@ -204,9 +204,9 @@ function Index() {
       </section>
 
       {/* Philosophy */}
-      <section id="philosophy" className="relative py-24 sm:py-32 px-5 sm:px-8 border-t border-border/60">
+      <section id="philosophy" className="relative py-16 sm:py-20 lg:py-24 px-5 sm:px-8 border-t border-border/60">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(42_65%_58%/0.05),transparent_70%)] pointer-events-none" />
-        <div className="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+        <div className="relative max-w-[88rem] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:gap-20 items-center">
           <div className="relative aspect-[4/5] rounded-lg overflow-hidden panel-luxury shadow-luxury">
             <img
               src={calligraphy}
