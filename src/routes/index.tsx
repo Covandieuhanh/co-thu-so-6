@@ -114,13 +114,13 @@ function Index() {
           <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background" />
         </div>
 
-        <header className="relative pt-24 sm:pt-32 pb-20 sm:pb-28 px-5 sm:px-8 max-w-5xl mx-auto text-center">
-          <div className="inline-flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.4em] text-gold-soft mb-8">
+        <header className="relative pt-16 sm:pt-20 lg:pt-24 pb-14 sm:pb-16 lg:pb-20 px-5 sm:px-8 max-w-5xl mx-auto text-center">
+          <div className="inline-flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.4em] text-gold-soft mb-6">
             <span className="h-px w-8 bg-gold/60" />
             Ba bộ môn · Một thư viện
             <span className="h-px w-8 bg-gold/60" />
           </div>
-          <h1 className="animate-fade-up text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display italic text-balance leading-[1.05] mb-8">
+          <h1 className="animate-fade-up text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display italic text-balance leading-[1.05] mb-6">
             Giải mã mật mã của{" "}
             <span className="text-gold-gradient animate-shimmer inline-block">Định Mệnh</span>
           </h1>
@@ -128,24 +128,24 @@ function Index() {
             Sự giao thoa giữa trí tuệ cổ xưa và toán học hiện đại. Chọn một bộ môn để nhập
             thông tin và nhận luận giải chi tiết.
           </p>
-          <div className="animate-fade-up [animation-delay:400ms] mt-10 flex flex-wrap justify-center gap-3">
+          <div className="animate-fade-up [animation-delay:400ms] mt-8 flex flex-wrap justify-center gap-3">
             <Link
               to="/bat-cuc-linh-so"
-              className="group relative inline-flex items-center gap-2 bg-[image:var(--gradient-gold)] text-primary-foreground px-7 py-3.5 rounded-full text-[11px] font-bold uppercase tracking-[0.25em] shadow-gold-glow hover:brightness-110 transition-all"
+              className="group relative inline-flex items-center gap-2 bg-[image:var(--gradient-gold)] text-primary-foreground px-6 py-3 rounded-full text-[11px] font-bold uppercase tracking-[0.25em] shadow-gold-glow hover:brightness-110 transition-all"
             >
               Bắt đầu với Bát Cực
               <span className="transition-transform group-hover:translate-x-0.5">→</span>
             </Link>
             <a
               href="#disciplines"
-              className="inline-flex items-center gap-2 border border-gold/40 px-7 py-3.5 rounded-full text-[11px] font-bold uppercase tracking-[0.25em] text-gold-soft hover:border-gold hover:text-gold transition-colors"
+              className="inline-flex items-center gap-2 border border-gold/40 px-6 py-3 rounded-full text-[11px] font-bold uppercase tracking-[0.25em] text-gold-soft hover:border-gold hover:text-gold transition-colors"
             >
               Khám phá bộ môn
             </a>
           </div>
 
           {/* Ornament divider */}
-          <div className="mt-16 flex items-center justify-center gap-4 opacity-70">
+          <div className="mt-10 flex items-center justify-center gap-4 opacity-70">
             <span className="hairline-gold w-24 sm:w-40" />
             <span className="text-gold text-lg">✦</span>
             <span className="hairline-gold w-24 sm:w-40" />
@@ -154,17 +154,18 @@ function Index() {
       </div>
 
       {/* Disciplines */}
-      <section id="disciplines" className="px-5 sm:px-8 py-20 sm:py-28 max-w-7xl mx-auto">
-        <div className="text-center mb-14 sm:mb-20">
-          <div className="text-[10px] font-mono uppercase tracking-[0.4em] text-gold mb-4">
+      <section id="disciplines" className="px-5 sm:px-8 py-14 sm:py-20 lg:py-24 max-w-[88rem] mx-auto">
+        <div className="text-center mb-10 sm:mb-14 lg:mb-16">
+          <div className="text-[10px] font-mono uppercase tracking-[0.4em] text-gold mb-3">
             三 · Ba Bộ Môn
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display italic">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display italic">
             Chọn con đường của bạn
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-8">
+
           {disciplines.map((d, i) => (
             <Link
               key={d.no}
