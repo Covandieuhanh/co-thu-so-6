@@ -170,7 +170,7 @@ function Index() {
             <Link
               key={d.no}
               to={d.to}
-              className="group panel-luxury rounded-lg p-8 sm:p-10 block relative overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-luxury"
+              className="group panel-luxury rounded-lg p-6 sm:p-7 lg:p-8 block relative overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-luxury"
               style={{ animationDelay: `${i * 120}ms` }}
             >
               {/* Glyph watermark */}
