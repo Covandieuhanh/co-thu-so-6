@@ -43,64 +43,66 @@ export function DisciplinePage({
         </div>
       </nav>
 
-      {/* Hero */}
+      {/* Hero + Reading (side by side on lg) */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(42_65%_58%/0.08),transparent_60%)] pointer-events-none" />
-        <header className="relative pt-20 sm:pt-28 pb-16 sm:pb-20 px-5 sm:px-8 max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.4em] text-gold mb-6">
-            <span className="h-px w-6 bg-gold/60" />
-            {no} · {tag}
-          </div>
-          <h1 className="animate-fade-up text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display italic leading-[1.05] mb-6 text-balance">
-            <span className="text-gold-gradient">{title}</span>
-          </h1>
-          <p className="animate-fade-up [animation-delay:150ms] text-muted-foreground max-w-2xl text-base md:text-lg leading-relaxed italic font-display">
-            {tagline}
-          </p>
-          <p className="animate-fade-up [animation-delay:300ms] mt-8 text-sm md:text-base leading-relaxed text-pretty max-w-2xl text-foreground/85">
-            {intro}
-          </p>
-          <div className="mt-10 flex items-center gap-4 opacity-70">
-            <span className="hairline-gold w-24" />
-            <span className="text-gold text-sm">✦</span>
-          </div>
-        </header>
-      </div>
+        <div className="relative max-w-[88rem] mx-auto px-5 sm:px-8 pt-14 sm:pt-20 lg:pt-24 pb-12 sm:pb-16 lg:pb-20 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] gap-10 lg:gap-14 items-start">
+          <header className="min-w-0">
+            <div className="inline-flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.4em] text-gold mb-5">
+              <span className="h-px w-6 bg-gold/60" />
+              {no} · {tag}
+            </div>
+            <h1 className="animate-fade-up text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display italic leading-[1.05] mb-5 text-balance">
+              <span className="text-gold-gradient">{title}</span>
+            </h1>
+            <p className="animate-fade-up [animation-delay:150ms] text-muted-foreground max-w-2xl text-base md:text-lg leading-relaxed italic font-display">
+              {tagline}
+            </p>
+            <p className="animate-fade-up [animation-delay:300ms] mt-6 text-sm md:text-base leading-relaxed text-pretty max-w-2xl text-foreground/85">
+              {intro}
+            </p>
+            <div className="mt-8 flex items-center gap-4 opacity-70">
+              <span className="hairline-gold w-24" />
+              <span className="text-gold text-sm">✦</span>
+            </div>
+          </header>
 
-      {/* Reading form */}
-      {reading && (
-        <section className="px-5 sm:px-8 pb-16 sm:pb-20">
-          <div className="max-w-4xl mx-auto">
-            <div className="panel-luxury rounded-lg p-6 sm:p-10 md:p-12 shadow-luxury relative">
-              <div className="absolute inset-3 border border-gold/15 rounded pointer-events-none" />
-              <div className="relative">
-                <div className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.35em] text-gold mb-8">
-                  <span className="h-px w-6 bg-gold/60" />
-                  Luận giải cho bạn
+          {reading && (
+            <div className="min-w-0 lg:sticky lg:top-24">
+              <div className="panel-luxury rounded-lg p-5 sm:p-8 md:p-10 shadow-luxury relative">
+                <div className="absolute inset-3 border border-gold/15 rounded pointer-events-none" />
+                <div className="relative">
+                  <div className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.35em] text-gold mb-6">
+                    <span className="h-px w-6 bg-gold/60" />
+                    Luận giải cho bạn
+                  </div>
+                  {reading}
                 </div>
-                {reading}
               </div>
             </div>
-          </div>
-        </section>
-      )}
+          )}
+        </div>
+      </div>
 
-      {/* Sections */}
-      <section className="px-5 sm:px-8 max-w-4xl mx-auto pb-16 sm:pb-20 space-y-14 sm:space-y-20">
-        {sections.map((s, i) => (
-          <div key={s.heading} className="border-t border-border/60 pt-12">
-            <div className="text-[10px] font-mono text-gold tracking-[0.3em] mb-3">
-              §{String(i + 1).padStart(2, "0")}
+      {/* Sections — multi-column on wide */}
+      <section className="px-5 sm:px-8 max-w-[88rem] mx-auto pb-14 sm:pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 border-t border-border/60 pt-10">
+          {sections.map((s, i) => (
+            <div key={s.heading} className="min-w-0">
+              <div className="text-[10px] font-mono text-gold tracking-[0.3em] mb-3">
+                §{String(i + 1).padStart(2, "0")}
+              </div>
+              <h2 className="text-xl sm:text-2xl lg:text-[1.7rem] font-display italic mb-4">
+                {s.heading}
+              </h2>
+              <div className="text-sm md:text-[0.95rem] text-muted-foreground leading-relaxed space-y-3">
+                {s.body}
+              </div>
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display italic mb-6">
-              {s.heading}
-            </h2>
-            <div className="text-sm md:text-base text-muted-foreground leading-relaxed space-y-4">
-              {s.body}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </section>
+
 
       {/* Key concepts */}
       <section className="px-5 sm:px-8 py-20 sm:py-24 border-t border-border/60 bg-[radial-gradient(ellipse_at_center,hsl(42_65%_58%/0.04),transparent_70%)]">
