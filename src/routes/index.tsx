@@ -5,13 +5,13 @@ import calligraphy from "@/assets/calligraphy.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Cổ Thư Số — Giải mã mật mã của Định Mệnh" },
+      { title: "Huyền Học Aha Sage — Giải mã mật mã của Định Mệnh" },
       {
         name: "description",
         content:
           "Bát Cực Linh Số, Từ Trường Số và Bát Tự — ba bộ môn huyền học trong một thư viện hiện đại.",
       },
-      { property: "og:title", content: "Cổ Thư Số — Giải mã mật mã của Định Mệnh" },
+      { property: "og:title", content: "Huyền Học Aha Sage — Giải mã mật mã của Định Mệnh" },
       {
         property: "og:description",
         content: "Giao thoa giữa trí tuệ cổ xưa và toán học hiện đại.",
@@ -82,7 +82,7 @@ function Index() {
               古
             </span>
             <span className="truncate text-lg sm:text-xl font-display italic tracking-tight">
-              Cổ Thư Số
+              Huyền Học Aha Sage
             </span>
           </Link>
           <div className="hidden md:flex gap-8 text-[11px] font-medium uppercase tracking-[0.25em] text-muted-foreground">
@@ -257,7 +257,7 @@ function Index() {
               <span className="grid h-10 w-10 place-items-center rounded-full border border-gold text-gold font-display italic text-lg">
                 古
               </span>
-              <div className="text-2xl font-display italic">Cổ Thư Số</div>
+              <div className="text-2xl font-display italic">Huyền Học Aha Sage</div>
             </div>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
               Khai mở tuệ giác thông qua các môn huyền học Á Đông và Phương Tây hiện đại — tính
@@ -295,7 +295,7 @@ function Index() {
         </div>
         <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-border/40 flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="text-[9px] font-mono text-muted-foreground/60 uppercase tracking-[0.25em]">
-            © 2026 CỔ THƯ SỐ · ALL RIGHTS RESERVED
+            © 2026 HUYỀN HỌC AHA SAGE · ALL RIGHTS RESERVED
           </div>
           <div className="text-[9px] font-mono text-gold/70 tracking-[0.2em]">
             福生富貴 · 心生相

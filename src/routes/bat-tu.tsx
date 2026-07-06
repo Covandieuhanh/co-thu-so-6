@@ -6,7 +6,7 @@ import { calcBatTu, type BatTuResult } from "@/lib/huyen-hoc";
 export const Route = createFileRoute("/bat-tu")({
   head: () => ({
     meta: [
-      { title: "Bát Tự Tứ Trụ — Cổ Thư Số" },
+      { title: "Bát Tự Tứ Trụ — Huyền Học Aha Sage" },
       { name: "description", content: "Nhập ngày giờ sinh để lấy tám chữ can chi và xác định Nhật Chủ." },
     ],
   }),

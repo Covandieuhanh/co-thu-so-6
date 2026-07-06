@@ -6,7 +6,7 @@ import { calcNumerology, type NumerologyResult } from "@/lib/huyen-hoc";
 export const Route = createFileRoute("/tu-truong-so")({
   head: () => ({
     meta: [
-      { title: "Từ Trường Số — Cổ Thư Số" },
+      { title: "Từ Trường Số — Huyền Học Aha Sage" },
       { name: "description", content: "Nhập họ tên và ngày sinh để nhận con số chủ đạo, sứ mệnh, linh hồn và nhân cách." },
       { property: "og:title", content: "Từ Trường Số — Rung Động Năng Lượng" },
       { property: "og:description", content: "Con số chủ đạo và sứ mệnh linh hồn qua ngày sinh và tên gọi." },
