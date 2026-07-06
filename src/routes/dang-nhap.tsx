@@ -1,7 +1,8 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { AuthShell, Field, inputCls, btnPrimary, btnGhost, normalizePhoneVN } from "@/components/AuthShell";
+import { AuthShell, Field, inputCls, btnPrimary, btnGhost } from "@/components/AuthShell";
+import { normalizePhoneVN } from "@/lib/auth-context";
 
 export const Route = createFileRoute("/dang-nhap")({
   head: () => ({ meta: [{ title: "Đăng nhập — Huyền Học Aha Sage" }] }),

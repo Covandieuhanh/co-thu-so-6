@@ -1,7 +1,8 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { AuthShell, Field, inputCls, btnPrimary, normalizePhoneVN } from "@/components/AuthShell";
+import { AuthShell, Field, inputCls, btnPrimary } from "@/components/AuthShell";
+import { normalizePhoneVN } from "@/lib/auth-context";
 
 export const Route = createFileRoute("/quen-mat-khau")({
   head: () => ({ meta: [{ title: "Quên mật khẩu — Huyền Học Aha Sage" }] }),
