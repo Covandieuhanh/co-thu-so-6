@@ -79,14 +79,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Cổ Thư Số — Giải mã mật mã của Định Mệnh" },
+      { title: "Huyền Học Aha Sage — Giải mã mật mã của Định Mệnh" },
       {
         name: "description",
         content:
           "Bát Cực Linh Số, Từ Trường Số và Bát Tự — ba bộ môn huyền học Á Đông trong một thư viện số hiện đại.",
       },
-      { name: "author", content: "Cổ Thư Số" },
-      { property: "og:title", content: "Cổ Thư Số — Giải mã mật mã của Định Mệnh" },
+      { name: "author", content: "Huyền Học Aha Sage" },
+      { property: "og:title", content: "Huyền Học Aha Sage — Giải mã mật mã của Định Mệnh" },
       {
         property: "og:description",
         content: "Giao thoa giữa trí tuệ cổ xưa và toán học hiện đại.",

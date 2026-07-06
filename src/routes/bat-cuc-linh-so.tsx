@@ -6,7 +6,7 @@ import { calcBatCuc } from "@/lib/huyen-hoc";
 export const Route = createFileRoute("/bat-cuc-linh-so")({
   head: () => ({
     meta: [
-      { title: "Bát Cực Linh Số — Cổ Thư Số" },
+      { title: "Bát Cực Linh Số — Huyền Học Aha Sage" },
       { name: "description", content: "Nhập số điện thoại, CCCD, biển số xe để giải mã tám quẻ cát hung." },
     ],
   }),

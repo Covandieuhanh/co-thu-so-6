@@ -129,7 +129,7 @@ export function InitialSplash() {
           className="font-serif tracking-[0.4em] text-sm uppercase"
           style={{ color: "hsl(42 60% 70% / 0.8)" }}
         >
-          Cổ Thư Số
+          Huyền Học Aha Sage
         </div>
       </div>
     </div>

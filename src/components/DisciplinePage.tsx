@@ -31,7 +31,7 @@ export function DisciplinePage({
               古
             </span>
             <span className="truncate text-lg sm:text-xl font-display italic tracking-tight">
-              Cổ Thư Số
+              Huyền Học Aha Sage
             </span>
           </Link>
           <div className="hidden md:flex gap-8 text-[11px] font-medium uppercase tracking-[0.25em] text-muted-foreground">
@@ -204,7 +204,7 @@ export function DisciplinePage({
       <footer className="py-14 sm:py-16 px-5 sm:px-8 border-t border-border/60">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="text-[9px] font-mono text-muted-foreground/60 uppercase tracking-[0.3em]">
-            © 2026 CỔ THƯ SỐ · ALL RIGHTS RESERVED
+            © 2026 HUYỀN HỌC AHA SAGE · ALL RIGHTS RESERVED
           </div>
           <Link
             to="/"
