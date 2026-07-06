@@ -10,6 +10,10 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TuTruongSoRouteImport } from './routes/tu-truong-so'
+import { Route as QuenMatKhauRouteImport } from './routes/quen-mat-khau'
+import { Route as HoSoRouteImport } from './routes/ho-so'
+import { Route as DangNhapRouteImport } from './routes/dang-nhap'
+import { Route as DangKyRouteImport } from './routes/dang-ky'
 import { Route as BatTuRouteImport } from './routes/bat-tu'
 import { Route as BatCucLinhSoRouteImport } from './routes/bat-cuc-linh-so'
 import { Route as IndexRouteImport } from './routes/index'
@@ -17,6 +21,26 @@ import { Route as IndexRouteImport } from './routes/index'
 const TuTruongSoRoute = TuTruongSoRouteImport.update({
   id: '/tu-truong-so',
   path: '/tu-truong-so',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuenMatKhauRoute = QuenMatKhauRouteImport.update({
+  id: '/quen-mat-khau',
+  path: '/quen-mat-khau',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HoSoRoute = HoSoRouteImport.update({
+  id: '/ho-so',
+  path: '/ho-so',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DangNhapRoute = DangNhapRouteImport.update({
+  id: '/dang-nhap',
+  path: '/dang-nhap',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DangKyRoute = DangKyRouteImport.update({
+  id: '/dang-ky',
+  path: '/dang-ky',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BatTuRoute = BatTuRouteImport.update({
@@ -39,12 +63,20 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/bat-cuc-linh-so': typeof BatCucLinhSoRoute
   '/bat-tu': typeof BatTuRoute
+  '/dang-ky': typeof DangKyRoute
+  '/dang-nhap': typeof DangNhapRoute
+  '/ho-so': typeof HoSoRoute
+  '/quen-mat-khau': typeof QuenMatKhauRoute
   '/tu-truong-so': typeof TuTruongSoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/bat-cuc-linh-so': typeof BatCucLinhSoRoute
   '/bat-tu': typeof BatTuRoute
+  '/dang-ky': typeof DangKyRoute
+  '/dang-nhap': typeof DangNhapRoute
+  '/ho-so': typeof HoSoRoute
+  '/quen-mat-khau': typeof QuenMatKhauRoute
   '/tu-truong-so': typeof TuTruongSoRoute
 }
 export interface FileRoutesById {
@@ -52,20 +84,53 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/bat-cuc-linh-so': typeof BatCucLinhSoRoute
   '/bat-tu': typeof BatTuRoute
+  '/dang-ky': typeof DangKyRoute
+  '/dang-nhap': typeof DangNhapRoute
+  '/ho-so': typeof HoSoRoute
+  '/quen-mat-khau': typeof QuenMatKhauRoute
   '/tu-truong-so': typeof TuTruongSoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/bat-cuc-linh-so' | '/bat-tu' | '/tu-truong-so'
+  fullPaths:
+    | '/'
+    | '/bat-cuc-linh-so'
+    | '/bat-tu'
+    | '/dang-ky'
+    | '/dang-nhap'
+    | '/ho-so'
+    | '/quen-mat-khau'
+    | '/tu-truong-so'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/bat-cuc-linh-so' | '/bat-tu' | '/tu-truong-so'
-  id: '__root__' | '/' | '/bat-cuc-linh-so' | '/bat-tu' | '/tu-truong-so'
+  to:
+    | '/'
+    | '/bat-cuc-linh-so'
+    | '/bat-tu'
+    | '/dang-ky'
+    | '/dang-nhap'
+    | '/ho-so'
+    | '/quen-mat-khau'
+    | '/tu-truong-so'
+  id:
+    | '__root__'
+    | '/'
+    | '/bat-cuc-linh-so'
+    | '/bat-tu'
+    | '/dang-ky'
+    | '/dang-nhap'
+    | '/ho-so'
+    | '/quen-mat-khau'
+    | '/tu-truong-so'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BatCucLinhSoRoute: typeof BatCucLinhSoRoute
   BatTuRoute: typeof BatTuRoute
+  DangKyRoute: typeof DangKyRoute
+  DangNhapRoute: typeof DangNhapRoute
+  HoSoRoute: typeof HoSoRoute
+  QuenMatKhauRoute: typeof QuenMatKhauRoute
   TuTruongSoRoute: typeof TuTruongSoRoute
 }
 
@@ -76,6 +141,34 @@ declare module '@tanstack/react-router' {
       path: '/tu-truong-so'
       fullPath: '/tu-truong-so'
       preLoaderRoute: typeof TuTruongSoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quen-mat-khau': {
+      id: '/quen-mat-khau'
+      path: '/quen-mat-khau'
+      fullPath: '/quen-mat-khau'
+      preLoaderRoute: typeof QuenMatKhauRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ho-so': {
+      id: '/ho-so'
+      path: '/ho-so'
+      fullPath: '/ho-so'
+      preLoaderRoute: typeof HoSoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dang-nhap': {
+      id: '/dang-nhap'
+      path: '/dang-nhap'
+      fullPath: '/dang-nhap'
+      preLoaderRoute: typeof DangNhapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dang-ky': {
+      id: '/dang-ky'
+      path: '/dang-ky'
+      fullPath: '/dang-ky'
+      preLoaderRoute: typeof DangKyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/bat-tu': {
@@ -106,6 +199,10 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BatCucLinhSoRoute: BatCucLinhSoRoute,
   BatTuRoute: BatTuRoute,
+  DangKyRoute: DangKyRoute,
+  DangNhapRoute: DangNhapRoute,
+  HoSoRoute: HoSoRoute,
+  QuenMatKhauRoute: QuenMatKhauRoute,
   TuTruongSoRoute: TuTruongSoRoute,
 }
 export const routeTree = rootRouteImport
